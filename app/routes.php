@@ -13,11 +13,22 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
 
 Route::get('/lorem-ipsum/{numberOfParagraphs?}', function($numberOfParagraphs=5){
 	echo "<h2>Lorem Ipsum paragraphs</h2>";
+	$generator = new Badcow\LoremIpsum\Generator();
+	$paragraphs = $generator->getParagraphs($numberOfParagraphs);
+	echo implode('<p>', $paragraphs);
+});
+
+Route::post('/lorem-ipsum', function(){
+	if (empty($_POST["paragraphs"])) {
+	    $numberOfParagraphs=5;    
+	}else{  
+	    $numberOfParagraphs=$_POST["paragraphs"];
+	}
 	$generator = new Badcow\LoremIpsum\Generator();
 	$paragraphs = $generator->getParagraphs($numberOfParagraphs);
 	echo implode('<p>', $paragraphs);
