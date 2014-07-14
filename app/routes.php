@@ -44,6 +44,22 @@ Route::get('/user-generator/{numberOfUsers?}', function($numberOfUsers=2){
 	}	
 });
 
+
+Route::post('/user-generator', function(){
+	print_r($_POST);
+	if (empty($_POST["users"])) {
+	    $numberOfUsers=5;    
+	}else{  
+	    $numberOfUsers=$_POST["users"];
+	}	
+	$faker = Faker\Factory::create();
+
+	for ($i=0; $i < $numberOfUsers; $i++) {
+		echo "<h3>".$faker->name."</h3>";
+ 		echo "<p>".$faker->address."</p>";
+	}	
+});
+
 Route::get('/test', function() {
 	echo "<h2>Lorem Ipsum paragraphs</h2>";
 	$generator = new Badcow\LoremIpsum\Generator();
