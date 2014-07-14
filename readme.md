@@ -12,7 +12,5 @@ No login required.
 
 ## Outside code
 * Bootstrap: http://getbootstrap.com/
-* Used the packages suggested in the project specs
-For the lorem ipsum text, used [badcow/lorem-ipsum](https://packagist.org/packages/badcow/lorem-ipsum)
-For the random users, used [fzaninotto/faker](https://packagist.org/packages/fzaninotto/faker)
+* Used the packages suggested in the project specs. For the lorem ipsum text, used [badcow/lorem-ipsum](https://packagist.org/packages/badcow/lorem-ipsum). For the random users, used [fzaninotto/faker](https://packagist.org/packages/fzaninotto/faker)
 
