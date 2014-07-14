@@ -46,7 +46,7 @@ Route::get('/user-generator/{numberOfUsers?}', function($numberOfUsers=2){
 
 
 Route::post('/user-generator', function(){
-	print_r($_POST);
+	echo "<h2>Users</h2>";
 	if (empty($_POST["users"])) {
 	    $numberOfUsers=5;    
 	}else{  
